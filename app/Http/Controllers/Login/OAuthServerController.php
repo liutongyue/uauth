@@ -70,6 +70,9 @@ class OAuthServerController extends Controller
             'password' => 'required',
             'redirect_url' => 'required',
             'sms' => ''
+        ], [
+            'username.required' => '用户名 必填',
+            'password.required' => '密码 必填',
         ]);
 
         //初始化OAuth

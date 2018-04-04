@@ -38,6 +38,10 @@ class UserModule
     {
         $user = User::getUserInfoByUName($this->app, $userName);
 
+        if (empty($user)) {
+            return [false, null];
+        }
+
         return [password_verify($userPwd, $user->{$this->app->db->user_table_password}), $user];
     }
 
